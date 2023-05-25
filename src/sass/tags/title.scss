@@ -1,0 +1,6 @@
+.title{
+ @include flex(row,nowrap,center,center,0);
+ &__h1{
+  font-size: 2em;
+ }
+}

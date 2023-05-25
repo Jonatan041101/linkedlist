@@ -372,4 +372,15 @@ select:focus {
   border: 0.1em solid #000;
 }
 
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.title__h1 {
+  font-size: 2em;
+}
+
 /*# sourceMappingURL=main.css.map */
