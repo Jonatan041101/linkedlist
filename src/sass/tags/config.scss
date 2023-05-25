@@ -1,0 +1,61 @@
+.config{
+ font-family: sans-serif;
+
+&__ul{
+ @include flex(row,nowrap,center,flex-start,1em);
+}
+&__li{
+ @include flex(column,nowrap,flex-start,center,.8em);
+}
+&__h3{
+ width: 100%;
+ color: #fff;
+ background: #000;
+ height: 2em;
+ font-size: 1.1em;
+ font-weight: bold;
+ @include flex(row,nowrap,center,center,.4em);
+ border-radius: .5em;
+}
+&__buttons{
+ @include flex(column,nowrap,flex-start,flex-start,1em);
+}
+&__button{
+ @include flex(row,nowrap,flex-start,center,.4em);
+ height: 2em;
+}
+&__ad{
+ background: #fff;
+ padding: 0 .4em;
+ width: 12em;
+ height: 100%;
+ border-radius: .5em;
+ outline: none;
+}
+&__add{
+ height: 100%;
+ background: #000;
+ border-radius: .5em;
+ padding: .4em;
+ border: .1em solid #fff;
+ color: #fff;
+
+}
+&__del{
+ background: #fff;
+ padding: 0 .4em;
+ width: 12em;
+ height: 100%;
+ border-radius: .5em;
+ outline: none;
+}
+&__delete{ 
+ height: 100%;
+ background: #000;
+ border-radius: .5em;
+ padding: .4em;
+ color: #fff;
+ border: .1em solid #fff;
+
+}
+}

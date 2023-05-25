@@ -1,0 +1,8 @@
+.btn{
+ font-weight: bold;
+ transition: .5s ease;
+ cursor: pointer;
+ &:hover{
+  border: .1em solid #000;
+ }
+}

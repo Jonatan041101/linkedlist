@@ -1,0 +1,375 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.upercase {
+  text-transform: capitalize;
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+* {
+  hyphens: none;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none; /* Esto oculta la barra de desplazamiento */
+  font-family: GothamLight;
+  overflow-x: hidden;
+  position: relative;
+  backdrop-filter: blur(0.6em);
+  background: #272727;
+}
+
+select::-ms-expand {
+  display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
+  outline: none;
+  border: none;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+}
+
+.globs {
+  background: #feac1d;
+  border-radius: 50%;
+  height: 50em;
+  width: 50em;
+  position: fixed;
+  top: -10em;
+  right: -10em;
+}
+
+.globs:nth-child(2) {
+  top: 25em;
+  right: -20em;
+  background: #f47923;
+  opacity: 0.5;
+}
+
+.bottom {
+  width: 70em;
+  right: -5em;
+  top: 38.5em;
+  background: #f47923;
+  opacity: 0.4;
+}
+
+.linkedlist {
+  font-family: sans-serif;
+  min-height: 80vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5em;
+  padding: 1em;
+}
+.linkedlist__ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+.linkedlist__null {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+.linkedlist__li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.linkedlist__id {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.4em;
+  background: #9e3737;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+.linkedlist__value {
+  position: relative;
+  background: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.linkedlist__arrow {
+  color: #fff;
+}
+.linkedlist__aux {
+  display: none;
+}
+
+@keyframes addLinkedist {
+  from {
+    transform: translateX(-2em);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.config {
+  font-family: sans-serif;
+}
+.config__ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1em;
+}
+.config__li {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8em;
+}
+.config__h3 {
+  width: 100%;
+  color: #fff;
+  background: #000;
+  height: 2em;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  border-radius: 0.5em;
+}
+.config__buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+}
+.config__button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4em;
+  height: 2em;
+}
+.config__ad {
+  background: #fff;
+  padding: 0 0.4em;
+  width: 12em;
+  height: 100%;
+  border-radius: 0.5em;
+  outline: none;
+}
+.config__add {
+  height: 100%;
+  background: #000;
+  border-radius: 0.5em;
+  padding: 0.4em;
+  border: 0.1em solid #fff;
+  color: #fff;
+}
+.config__del {
+  background: #fff;
+  padding: 0 0.4em;
+  width: 12em;
+  height: 100%;
+  border-radius: 0.5em;
+  outline: none;
+}
+.config__delete {
+  height: 100%;
+  background: #000;
+  border-radius: 0.5em;
+  padding: 0.4em;
+  color: #fff;
+  border: 0.1em solid #fff;
+}
+
+.btn {
+  font-weight: bold;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  border: 0.1em solid #000;
+}
+
+/*# sourceMappingURL=main.css.map */

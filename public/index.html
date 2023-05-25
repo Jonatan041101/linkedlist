@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Linkedlist UI</title>
+ <link rel="stylesheet" href="../src/css/main.css">
+</head>
+<body>
+ <div class="linkedlist">
+  <ul class="linkedlist__ul"></ul>
+ </div>
+ <div class="config">
+  <ul class="config__ul">
+   <li class="config__li">
+    <div class="config__buttons">
+     <h3 class="config__h3">Agregar a la Linkedist</h3>
+     <div class="config__button">
+        <input type="text" class="config__ad" placeholder="Numeros como 1,2,3...">
+        <button class="config__add btn">Agregar</button>
+     </div>
+    </div>
+   <li class="config__li">
+    <div class="config__buttons">
+     <h3 class="config__h3">Eliminar de la Linkedist</h3>
+     <div class="config__button">
+     <input type="text" class="config__del" placeholder="Ids los rojos encima de cada circulo..">
+     <button class="config__delete btn">Eliminar</button>
+     </div>
+     <div class="config__button">
+      <input type="text" class="config__del" placeholder="Valor del nodo" id="delete-value">
+      <button class="config__delete btn" id="delete-all">Eliminar</button>
+      </div>
+    </div>
+   </li>
+   </li>
+  </ul>
+ </div>
+ <script src="../dist/index.js" type="module"></script>
+</body>
+</html>
